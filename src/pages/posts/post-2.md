@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/MarkdownPostLayout.astro"
 title: My Second Blog Post
 author: Ava Dignam
 description: "After learning some Astro, I couldn't stop!"
@@ -6,6 +7,7 @@ image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "Thumbnail of Astro arcs."
 pubDate: 2023-08-08
+mood: "Unsure"
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
 

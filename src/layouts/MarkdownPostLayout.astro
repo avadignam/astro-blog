@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<style>
+  img {
+    height: 5rem;
+  }
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>{frontmatter.description}</p>
+  <p>Written by {frontmatter.author}</p>
+  <p>Published: {frontmatter.pubDate.slice(0, 10)}</p>
+  {frontmatter.mood && <p>Mood: {frontmatter.mood}</p>}
+  {
+    frontmatter.todos && frontmatter.todos.length > 0 && (
+      <div>
+        Todos:
+        <ol>
+          {frontmatter.todos.map((todo) => (
+            <li>{todo}</li>
+          ))}
+        </ol>
+      </div>
+    )
+  }
+  <slot />
+  <div>Tags: {frontmatter.tags.join(", ")}</div>
+</BaseLayout>
