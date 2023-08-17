@@ -12,7 +12,7 @@ const pageTitle = "Blog";
     {
       allPosts.map((post) => (
         <BlogPost
-          url={post.frontmatter.url}
+          url={post.url}
           title={post.frontmatter.title}
           pubDate={post.frontmatter.pubDate.slice(0, 10)}
         />
